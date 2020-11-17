@@ -85,11 +85,6 @@ class Ticket
     return $ticketsList;
   }
 
-  // public function deleteById($id)
-  // {
-  //     $query = $this->database->mysql->query("DELETE FROM `agenda` WHERE `agenda`.`id` = {$id}");
-  // }
-
   public function delete()
   {
     $query = $this->database->mysql->query("DELETE FROM `agenda` WHERE `agenda`.`ID` = {$this->id}");
@@ -103,11 +98,6 @@ class Ticket
 
 
     return new self($result[0]["Coder/Team"], $result[0]["Topic"], $result[0]["Date/Time"], $result[0]["ID"], $result[0]["Description"]);
-  }
-
-  public function UpdateById($coderTeam, $topic, $description, $id)
-  {
-    $this->database->mysql->query("UPDATE `agenda` SET `Coder/Team` = '{$coderTeam}', `Topic` = '{$topic}', `Description` = '{$description}' WHERE `ID` = {$id}");
   }
 
   public function Update()

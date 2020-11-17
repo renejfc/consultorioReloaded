@@ -39,13 +39,27 @@ class TicketTest extends TestCase
     //     $this->assertEquals([], $place);
     // }
 
-    public function test_ticket_is_saved() 
+    // public function test_ticket_is_saved() 
+    // {
+    //     $ticket = new Ticket("pepe", "duda php", "17.11.2020", 1, "mi duda php");
+
+    //     $result = $ticket->save("pepe", "duda php", "mi duda php");
+
+    //     $this->assertEquals("pepe", "duda php", "mi duda php", $result);
+    // }
+
+    public function test_ticket_is_updated() 
     {
         $ticket = new Ticket("pepe", "duda php", "17.11.2020", 1, "mi duda php");
 
-        $result = $ticket->save("pepe", "duda php", "mi duda php");
 
-        $this->assertEquals("pepe", "duda php", "mi duda php", $result);
+        $result = $ticket->Update("josé", "duda php", "mi duda php jose", 1);
+        
+        $getName = $ticket->getCoderTeam();
+        $getTopic = $ticket->getTopic();
+        $getDescription = $ticket->getDescription();
+
+        $this->assertEquals($getName, $getTopic, $getDescription, $result);
     }
 
     public function test_ticket_is_deleted() 
