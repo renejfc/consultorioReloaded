@@ -82,7 +82,7 @@ class Ticket
       $ticketItem = new self($ticket["Coder/Team"], $ticket["Topic"], $ticket["Date/Time"], $ticket["ID"]);
       array_push($ticketsList, $ticketItem);
     }
-
+    var_dump($ticketsList);
     return $ticketsList;
   }
 
