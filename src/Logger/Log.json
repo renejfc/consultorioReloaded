@@ -1,0 +1,42 @@
+{
+    "Time": "2020-11-14 10:39:05",
+    "Action": "Create",
+    "Message": "Created a new ticket",
+    "id": null
+}
+{
+    "Time": "2020-11-14 10:39:15",
+    "Action": "Update",
+    "Message": "Ticket updated",
+    "id": 2
+}
+{
+    "Time": "2020-11-14 10:39:20",
+    "Action": "Archive",
+    "Message": "Ticket archived",
+    "id": 4
+}
+{
+    "Time": "2020-11-14 11:10:53",
+    "Action": "Update",
+    "Message": "Ticket updated",
+    "id": 5
+}
+{
+    "Time": "2020-11-14 11:10:56",
+    "Action": "Delete",
+    "Message": "Delete a ticket",
+    "id": 8
+}
+{
+    "Time": "2020-11-14 11:11:19",
+    "Action": "Archive",
+    "Message": "Ticket archived",
+    "id": 2
+}
+{
+    "Time": "2020-11-17 08:50:50",
+    "Action": "Archive",
+    "Message": "Ticket archived",
+    "id": 39
+}
