@@ -4,4 +4,7 @@
         <i class="fas fa-plus">
         </i>
       </a>
+      <a class="btn btn-info animated fadeIn infinite alternate mx-2" href="?action=seeArchived">
+        <i class='lnr lnr-paperclip'></i>
+      </a>
 </header>

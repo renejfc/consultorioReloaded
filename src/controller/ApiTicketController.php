@@ -46,7 +46,11 @@ class ApiTicketController
     }
 
     if (isset($_GET) && ($_GET["action"] == "archive")) {
-      $this->archive($_GET["id"]);
+      $this->archive();
+      return;
+    }
+    if (isset($_GET) && ($_GET["action"] == "seeArchived")) {
+      $this->seeArchived($_GET["id"]);
       return;
     }
   }
@@ -120,6 +124,12 @@ class ApiTicketController
   {
     $ticketDone = Ticket::findById($id);
     new View("DoneTicket", ["ticket" => $ticketDone]);
+  }
+
+  public function seeArchived()
+  {
+    $ticketDoneList = Ticket::allDone();
+    new View("doneTicketList", ["ticket" => $ticketDoneList]);
   }
 
   public function archive($id)

@@ -49,6 +49,10 @@ class TicketController
       $this->archive($_GET["id"]);
       return;
     }
+    if (isset($_GET) && ($_GET["action"] == "seeArchived")) {
+      $this->seeArchived($_GET["id"]);
+      return;
+    }
   }
 
   public function index(): void
@@ -96,6 +100,11 @@ class TicketController
   {
     $ticketDone = Ticket::findById($id);
     new View("DoneTicket", ["ticket" => $ticketDone]);
+  }
+  public function seeArchived()
+  {
+    $ticketDoneList = Ticket::allDone();
+    new View("doneTicketList", ["ticket" => $ticketDoneList]);
   }
 
   public function archive($id)
