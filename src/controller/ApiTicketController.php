@@ -46,7 +46,7 @@ class ApiTicketController
     }
 
     if (isset($_GET) && ($_GET["action"] == "archive")) {
-      $this->archive();
+      $this->archive($_GET["id"]);
       return;
     }
     if (isset($_GET) && ($_GET["action"] == "seeArchived")) {
