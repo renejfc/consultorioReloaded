@@ -39,7 +39,7 @@ class TicketTest extends TestCase
     }
 
 
-    public function test_get_all_method()
+    public function test_get_all_tickets()
     {
         $this->setUp();
         $this->database->mysql->query("INSERT INTO `agenda` (`Coder/Team`, `Topic`, `Description`) VALUES ('pepe', 'duda' , 'no me sale');");
@@ -53,19 +53,19 @@ class TicketTest extends TestCase
     }
 
     
-    // public function test_ticket_is_updated() 
-    // {
-    //     $ticket = new Ticket("pepe", "duda php", "17.11.2020", 1, "mi duda php");
-
-
-    //     $result = $ticket->Update("josé", "duda php", "mi duda php jose", 1);
+    public function test_ticket_is_updated() 
+    {
+        $this->setUp();
+        $this->database->mysql->query("INSERT INTO `agenda` (`Coder/Team`, `Topic`, `Description`) VALUES ('pepe', 'duda' , 'no me sale');");
         
-    //     $getName = $ticket->getCoderTeam();
-    //     $getTopic = $ticket->getTopic();
-    //     $getDescription = $ticket->getDescription();
+        $ticketToUpdate = Ticket::findById(1);
+        $ticketToUpdate->changeTopic('muchas dudas');
+        $ticketToUpdate->Update();
+        $result = $ticketToUpdate->getTopic();
 
-    //     $this->assertEquals($getName, $getTopic, $getDescription, $result);
-    // }
+        
+        $this->assertEquals('muchas dudas', $result);
+    }
 
     // public function test_ticket_is_deleted() 
     // {
