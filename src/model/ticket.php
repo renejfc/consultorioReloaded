@@ -123,4 +123,13 @@ class Ticket
 
     return $ticketsList;
   }
+
+  public static function lastTicket()
+  {
+    $database = new DbSession();
+    $query = $database->mysql->query("SELECT * FROM `agenda` WHERE (`ID` = max(ID))");
+    $ticket = $query->fetchAll();
+    return new self ($ticket["Coder/Team"], $ticket["Topic"], $ticket["Date/Time"], $ticket["ID"]);
+
+  }
 }

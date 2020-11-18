@@ -88,7 +88,8 @@ class ApiTicketController
   {
     $newTicket = new Ticket();
     $newTicket->save($request["coderTeam"], $request["topic"], $request["description"]);
-    $log = new Log("Create", "Created a new ticket");
+    $lastTicket = Ticket::lastTicket();
+    $log = new Log("Create", "Created a new ticket", $lastTicket->getId());
     $log->LogInFile();
 
     $ticketArray = 
