@@ -32,11 +32,10 @@ class TicketTest extends TestCase
 
         // when
         $ticket->save("pepe", "duda php", "mi duda php");
-        var_dump($ticket);
         $result = Ticket::all();
 
         // then
-        $this->assertEquals(["pepe", "duda php", "mi duda php"], $result);
+        $this->assertEquals(1, count($result));
     }
 
 
