@@ -39,17 +39,18 @@ class TicketTest extends TestCase
     }
 
 
-    // public function test_get_all_method()
-    // {
-    //     $ticket1 = new Ticket();
-    //     // $ticket2 = new Ticket("peper", "duda js", "17.11.2020", 2, "mi duda2");
+    public function test_get_all_method()
+    {
+        $this->setUp();
+        $this->database->mysql->query("INSERT INTO `agenda` (`Coder/Team`, `Topic`, `Description`) VALUES ('pepe', 'duda' , 'no me sale');");
+        $this->database->mysql->query("INSERT INTO `agenda` (`Coder/Team`, `Topic`, `Description`) VALUES ('pepa', 'duda' , 'no me sale');");
+        $this->database->mysql->query("INSERT INTO `agenda` (`Coder/Team`, `Topic`, `Description`) VALUES ('pipe', 'duda' , 'no me sale');");
+  
 
-    //     $place = $ticket1->save("pepe", "duda php", "mi duda");
+        $result = Ticket::all();
 
-    //     $result = Ticket::all();
-
-    //     $this->assertEquals([], $place);
-    // }
+        $this->assertEquals(3, count($result));
+    }
 
     
     // public function test_ticket_is_updated() 
