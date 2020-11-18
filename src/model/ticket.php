@@ -127,9 +127,8 @@ class Ticket
   public static function lastTicket()
   {
     $database = new DbSession();
-    $query = $database->mysql->query("SELECT * FROM `agenda` WHERE (`ID` = max(ID))");
+    $query = $database->mysql->query("SELECT * FROM `agenda` ORDER BY id DESC LIMIT 1");
     $ticket = $query->fetchAll();
-    return new self ($ticket["Coder/Team"], $ticket["Topic"], $ticket["Date/Time"], $ticket["ID"]);
-
+    return new self ($ticket[0]["Coder/Team"], $ticket[0]["Topic"], $ticket[0]["Date/Time"], $ticket[0]["ID"]);
   }
 }
