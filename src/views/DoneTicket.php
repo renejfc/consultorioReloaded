@@ -28,7 +28,7 @@
         </tbody>
       </table>
       <div class="btn-group u-center"; style="width: 61rem;">
-        <button class="outline btn-danger"><a href="index.php">No</a></button>
+        <a class="btn outline btn-danger" href="index.php">No</a>
         <button type="submit" class="btn-success">Yes</button>
       </div>
     </form>
