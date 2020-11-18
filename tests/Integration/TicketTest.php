@@ -67,15 +67,21 @@ class TicketTest extends TestCase
         $this->assertEquals('muchas dudas', $result);
     }
 
-    // public function test_ticket_is_deleted() 
-    // {
-    //     $ticket = new Ticket("pepe", "duda php", "17.11.2020", 1, "mi duda php");
+    public function test_ticket_is_deleted() 
+    {
+        $this->setUp();
+        $this->database->mysql->query("INSERT INTO `agenda` (`Coder/Team`, `Topic`, `Description`) VALUES ('pepe', 'duda' , 'no me sale');");
+        $this->database->mysql->query("INSERT INTO `agenda` (`Coder/Team`, `Topic`, `Description`) VALUES ('pepa', 'duda' , 'no me sale');");
+        $this->database->mysql->query("INSERT INTO `agenda` (`Coder/Team`, `Topic`, `Description`) VALUES ('pipe', 'duda' , 'no me sale');");
+  
+        $ticketToDelete = Ticket::findById(1);
+        $ticketToDelete->delete();
 
-    //     $ticket->save("pepe", "duda php", "mi duda php");
+        $result = count(Ticket::all());
 
-    //     $result = $ticket->delete();
-
-    //     $this->assertEquals(null, $result);
-    // }
+        $this->assertEquals(2,$result);
+    }
+        
+        
  
 }
