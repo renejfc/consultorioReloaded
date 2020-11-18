@@ -113,6 +113,24 @@ class TicketTest extends TestCase
 
         $this->assertEquals( 1 ,$result);
     }
+    public function test_return_tickets_archived_list() 
+    {
+        $this->setUp();
+        $this->database->mysql->query("INSERT INTO `agenda` (`Coder/Team`, `Topic`, `Description`) VALUES ('pepe', 'duda' , 'no me sale');");
+        $this->database->mysql->query("INSERT INTO `agenda` (`Coder/Team`, `Topic`, `Description`) VALUES ('pepa', 'duda' , 'no me sale');");
+        $this->database->mysql->query("INSERT INTO `agenda` (`Coder/Team`, `Topic`, `Description`) VALUES ('pipe', 'duda' , 'no me sale');");
+  
+        $ticketToArchive = Ticket::findById(2);
+        $ticketToArchive->archiveDb();
+        $ticketToArchive2 = Ticket::findById(3);
+        $ticketToArchive2->archiveDb();
+
+        $ticketArchived = Ticket::allDone();
+        $result =  count($ticketArchived);
+
+
+        $this->assertEquals(2 ,$result);
+    }
    
         
  
