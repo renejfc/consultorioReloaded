@@ -82,6 +82,20 @@ class TicketTest extends TestCase
         $this->assertEquals(2,$result);
     }
         
+    public function test_ticket_find_by_id() 
+    {
+        $this->setUp();
+        $this->database->mysql->query("INSERT INTO `agenda` (`Coder/Team`, `Topic`, `Description`) VALUES ('pepe', 'duda' , 'no me sale');");
+        $this->database->mysql->query("INSERT INTO `agenda` (`Coder/Team`, `Topic`, `Description`) VALUES ('pepa', 'duda' , 'no me sale');");
+        $this->database->mysql->query("INSERT INTO `agenda` (`Coder/Team`, `Topic`, `Description`) VALUES ('pipe', 'duda' , 'no me sale');");
+  
+        $ticketTofind = Ticket::findById(2);
+
+        $result = $ticketTofind->getCoderTeam();
+
+        $this->assertEquals("pepa",$result);
+    }
+        
         
  
 }
