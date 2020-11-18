@@ -19,7 +19,7 @@ class Ticket
     $this->id = $id;
     $this->coderTeam = $coderTeam;
     $this->topic = $topic;
-    $this->dateTime = $dateTime;
+    $this->dateTime = $dateTime;  
     $this->description = $description;
 
     if (!$this->database) {
