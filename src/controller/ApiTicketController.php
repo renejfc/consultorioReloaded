@@ -57,7 +57,8 @@ class ApiTicketController
 
   public function index(): void
   {
-
+    phpinfo();
+    die;
     $ticketList = Ticket::all();
     $ticketApi = [];
 
