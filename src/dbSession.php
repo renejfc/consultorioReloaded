@@ -34,10 +34,10 @@ class DbSession
       return $pdo;
     } else {
       $dbopts = parse_url(getenv('CLEARDB_DATABASE_URL'));
-      $host = $dbopts["host"];
-      $user = $dbopts["user"];
-      $pass = $dbopts["pass"];
-      $database = "citas";
+      $host = "us-cdbr-east-02.cleardb.com";
+      $user = "b20b601ceff3f4";
+      $pass = "e1fc639d";
+      $database = "heroku_f8f637dc7ad4136";
       $charset = "utf-8";
       $options = [PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC];
       $pdo = new pdo("mysql:host={$host};dbname={$database};charset{$charset}", $user, $pass, $options);
@@ -45,3 +45,4 @@ class DbSession
     }
   }
 }
+//mysql://b20b601ceff3f4:e1fc639d@us-cdbr-east-02.cleardb.com/heroku_f8f637dc7ad4136?reconnect=true
