@@ -16,18 +16,9 @@ class ApiTicketController
       $this->index();
       return;
     }
-    if (isset($_GET) && ($_GET["action"] == "create")) {
-      $this->create();
-      return;
-    }
-
+    
     if (isset($_GET) && ($_GET["action"] == "store")) {
       $this->store($_POST);
-      return;
-    }
-
-    if (isset($_GET) && ($_GET["action"] == "edit")) {
-      $this->edit($_GET["id"]);
       return;
     }
 
@@ -40,17 +31,9 @@ class ApiTicketController
       $this->delete($_GET["id"]);
       return;
     }
-    if (isset($_GET) && ($_GET["action"] == "check")) {
-      $this->check($_GET["id"]);
-      return;
-    }
 
     if (isset($_GET) && ($_GET["action"] == "archive")) {
       $this->archive($_GET["id"]);
-      return;
-    }
-    if (isset($_GET) && ($_GET["action"] == "seeArchived")) {
-      $this->seeArchived($_GET["id"]);
       return;
     }
   }
