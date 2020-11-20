@@ -25,7 +25,7 @@ Our company is a development company and we need an application that allows us t
 
 At the moment we are going to develop a minimum viable product (MVP). We will start with a spaghetti code, in PHP and try to arrive at an object-oriented application using the MVC pattern (Model, View, Controller).
 
-#### Technical requirements:
+- Technical requirements:
 
     - CRUD type application (Create, Read, Update, Delete)
     - It should be Object Oriented with the MVC pattern
