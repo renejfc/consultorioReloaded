@@ -2,7 +2,7 @@
 
 namespace App\Controllers;
 
-use App\Model\Ticket;
+use App\Models\Ticket;
 use App\Logger\Log;
 
 
