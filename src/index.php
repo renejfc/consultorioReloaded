@@ -2,8 +2,8 @@
 
 namespace App;
 
-use App\Controller\TicketController;
-use App\Controller\ApiTicketController;
+use App\Controllers\TicketController;
+use App\Controllers\ApiTicketController;
 
 
 $controller = new TicketController();

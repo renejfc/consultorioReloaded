@@ -4,7 +4,7 @@ namespace Test\Integration;
 
 use PHPUnit\Framework\TestCase;
 use App\DbSession;
-use App\Model\Ticket;
+use App\Models\Ticket;
 
 class TicketTest extends TestCase
 {

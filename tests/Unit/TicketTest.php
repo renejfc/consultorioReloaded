@@ -3,7 +3,7 @@
 namespace Test\Unit;
 
 use PHPUnit\Framework\TestCase;
-use App\model\Ticket;
+use App\Models\Ticket;
 
 class TicketTest extends TestCase
 {
