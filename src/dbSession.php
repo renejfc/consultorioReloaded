@@ -45,4 +45,4 @@ class DbSession
     }
   }
 }
-//mysql://b20b601ceff3f4:e1fc639d@us-cdbr-east-02.cleardb.com/heroku_f8f637dc7ad4136?reconnect=true
+

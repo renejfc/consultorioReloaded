@@ -7,6 +7,7 @@ use App\Model\Ticket;
 use App\Logger\Log;
 
 
+
 class TicketController
 {
 
@@ -105,7 +106,7 @@ class TicketController
   public function seeArchived()
   {
     $ticketDoneList = Ticket::allDone();
-    new View("doneTicketList", ["ticket" => $ticketDoneList]);
+    new View("DoneTicketList", ["ticket" => $ticketDoneList]);
   }
 
   public function archive($id)
@@ -116,7 +117,7 @@ class TicketController
     $log->LogInFile();
 
     $ticketDoneList = Ticket::allDone();
-    new View("doneTicketList", ["ticket" => $ticketDoneList]);
+    new View("DoneTicketList", ["ticket" => $ticketDoneList]);
   }
 
   public function update(array $request, $id)

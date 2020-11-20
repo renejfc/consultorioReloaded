@@ -57,8 +57,6 @@ class ApiTicketController
 
   public function index(): void
   {
-    phpinfo();
-    die;
     $ticketList = Ticket::all();
     $ticketApi = [];
 
@@ -131,7 +129,7 @@ class ApiTicketController
   public function seeArchived()
   {
     $ticketDoneList = Ticket::allDone();
-    new View("doneTicketList", ["ticket" => $ticketDoneList]);
+    new View("DoneTicketList", ["ticket" => $ticketDoneList]);
   }
 
   public function archive($id)
@@ -155,7 +153,7 @@ class ApiTicketController
     }
 
     // echo json_encode($ticketApi);
-    new View("doneTicketList", ["ticket" => $ticketDoneList]);
+    new View("DoneTicketList", ["ticket" => $ticketDoneList]);
   }
 
   public function update(array $request, $id)

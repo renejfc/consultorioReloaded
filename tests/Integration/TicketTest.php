@@ -95,6 +95,21 @@ class TicketTest extends TestCase
 
         $this->assertEquals("pepa",$result);
     }
+    public function test_ticket_find_last_id() 
+    {
+        $this->setUp();
+
+        $this->database->mysql->query("INSERT INTO `agenda` (`Coder/Team`, `Topic`, `Description`) VALUES ('pepe', 'duda' , 'no me sale');");
+        $this->database->mysql->query("INSERT INTO `agenda` (`Coder/Team`, `Topic`, `Description`) VALUES ('pepa', 'duda' , 'no me sale');");
+        $this->database->mysql->query("INSERT INTO `agenda` (`Coder/Team`, `Topic`, `Description`) VALUES ('pipe', 'duda' , 'no me sale');");
+        
+  
+        $lastTicket = Ticket::lastTicket(2);
+
+        $result = $lastTicket->getCoderTeam();
+
+        $this->assertEquals("pipe",$result);
+    }
 
 
      public function test_ticket_archived() 
