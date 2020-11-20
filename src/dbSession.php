@@ -21,22 +21,10 @@ class DbSession
 
   private function getConnection()
   {
-    // if (!getenv('CLEARDB_DATABASE_URL')) {
-      // $host = "localhost";
-      // $user = "root";
-      // $pass = "root";
-      // $database = "citas";
-      // $charset = "utf-8";
-      // $options = [PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC];
-      // $pdo = new pdo("mysql:host={$host};dbname={$database};charset{$charset}", $user, $pass, $options);
-      // $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-    // } else {
-      $dbopts = parse_url(getenv('CLEARDB_DATABASE_URL'));
-      $host = "us-cdbr-east-02.cleardb.com";
-      $user = "b20b601ceff3f4";
-      $pass = "e1fc639d";
-      $database = "heroku_f8f637dc7ad4136";
+      $host = "eu-cdbr-west-03.cleardb.net";
+      $user = "bfdcbdf4f583cf";
+      $pass = "33f5745e";
+      $database = "heroku_09710e094e5fc4a";
       $charset = "utf-8";
       $options = [PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC];
       $pdo = new pdo("mysql:host={$host};dbname={$database};charset{$charset}", $user, $pass, $options);
