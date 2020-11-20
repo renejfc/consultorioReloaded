@@ -71,17 +71,11 @@ class ApiTicketController
       array_push($ticketApi, $ticketArray);
     }
 
-    // echo json_encode($ticketApi);
+    echo json_encode($ticketApi);
 
-    new View("ticketsList", [
-     "tickets" => $ticketList,
-   ]);
   }
 
-  public function create(): void
-  {
-    new View("createTicket");
-  }
+ 
 
   public function store(array $request): void
   {
@@ -98,10 +92,10 @@ class ApiTicketController
       "dataTime"  => $newTicket -> getDateTime(),
       "id" => $newTicket -> getId()
     ];
-    // echo json_encode($ticketArray);
+    echo json_encode($ticketArray);
 
 
-    $this->index();
+    
   }
 
   public function delete($id)
@@ -111,25 +105,7 @@ class ApiTicketController
     $log = new Log("Delete", "Delete a ticket", $id);
     $log->LogInFile();
 
-    $this->index();
-  }
-
-  public function edit($id)
-  {
-    $ticketToedit = Ticket::findById($id);
-    new View("EditTicket", ["ticket" => $ticketToedit]);
-  }
-
-  public function check($id)
-  {
-    $ticketDone = Ticket::findById($id);
-    new View("DoneTicket", ["ticket" => $ticketDone]);
-  }
-
-  public function seeArchived()
-  {
-    $ticketDoneList = Ticket::allDone();
-    new View("DoneTicketList", ["ticket" => $ticketDoneList]);
+   
   }
 
   public function archive($id)
@@ -152,8 +128,8 @@ class ApiTicketController
       array_push($ticketApi, $ticketArray);
     }
 
-    // echo json_encode($ticketApi);
-    new View("DoneTicketList", ["ticket" => $ticketDoneList]);
+    echo json_encode($ticketApi);
+    
   }
 
   public function update(array $request, $id)
@@ -173,9 +149,6 @@ class ApiTicketController
       "dataTime"  => $ticketToUpdate -> getDateTime(),
       "id" => $ticketToUpdate -> getId()
     ];
-    // echo json_encode($ticketArray);
-
-
-    $this->index();
+    echo json_encode($ticketArray);
   }
 }
