@@ -104,7 +104,7 @@ class TicketTest extends TestCase
         $this->database->mysql->query("INSERT INTO `agenda` (`Coder/Team`, `Topic`, `Description`) VALUES ('pipe', 'duda' , 'no me sale');");
         
   
-        $lastTicket = Ticket::lastTicket(2);
+        $lastTicket = Ticket::lastTicket();
 
         $result = $lastTicket->getCoderTeam();
 
