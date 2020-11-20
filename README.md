@@ -15,7 +15,7 @@
 
 ## Install dependencies
 
-`` nmp install ``
+`` npm install ``
 
 ## Bootcamp F5 Excercise
 
