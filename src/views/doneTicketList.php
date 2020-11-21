@@ -15,6 +15,7 @@
           <th><abbr title="Name of the coder or the team">Coder/Team</abbr></th>
           <th><abbr title="Kind of topic">Topic</abbr></th>
           <th><abbr title="When the ticket was created">Date/Time</abbr></th>
+          <th><abbr title="Things you can do with this ticket">Options</abbr></th>
         </tr>
         </tr>
       </thead>
@@ -26,6 +27,9 @@
                 <td>{$ticket->getCoderTeam()}</td>
                 <td>{$ticket->getTopic()}</td>
                 <td>{$ticket->getDateTime()}</td>
+                <td class='btn-group u-flex-row'>
+                  <a class='btn btn-danger' href='?action=delete&id={$ticket->getId()}'><i class='lnr lnr-trash'></i></a>
+                </td>
             </tr>
             ";
         } ?>
